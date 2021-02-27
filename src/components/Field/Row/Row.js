@@ -1,19 +1,16 @@
 import React from 'react'
+import Element from './Element/Element'
 
 const Row = props => {
-  let buttons = [];
+  const buttons = []
   
   for(let i = 0; i < props.amount; i++) {
-    buttons.push(<button key={i}></button>)
+    buttons.push(<Element key={i}></Element>)
   }
   
   return (
     <div className={'Row'}>
-      {buttons.map(element => {
-        return (
-          element
-        )
-      })}
+      {buttons.map(element => element)}
     </div>
   
   )
