@@ -13,7 +13,7 @@
     @extend %border;
     border-color: white grey grey white;
     display: flex;
-    width: 259px;
+    width: 258px;
     flex-wrap: wrap;
     justify-content: space-between;
     background: #d3d3d3;
@@ -35,17 +35,12 @@
       @extend %border;
       border-color: grey white white grey;
 
-      div {
-        width: 100%;
-        display: flex;
-
-        button {
-          @extend %border;
-          border-color: white grey grey white;
-          width: 28px;
-          height: 28px;
-          outline: none;
-        }
+      button {
+        @extend %border;
+        border-color: white grey grey white;
+        width: 28px;
+        height: 28px;
+        outline: none;
       }
     }
 

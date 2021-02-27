@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import './PlayingField.scss'
 import Scoreboard from '../../components/UI/Scoreboard/Scoreboard'
+import Row from '../../components/Field/Row/Row'
 
 export default class PlayingField extends Component {
   constructor(props) {
@@ -25,105 +26,7 @@ export default class PlayingField extends Component {
             />
           </header>
           <main>
-            <div>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-            </div>
-            <div>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-            </div>
-            <div>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-            </div>
-            <div>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-            </div>
-            <div>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-            </div>
-            <div>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-            </div>
-            <div>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-            </div>
-            <div>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-            </div>
-            <div>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-            </div>
+           <Row amount={9}/>
           </main>
         </div>
       </div>
