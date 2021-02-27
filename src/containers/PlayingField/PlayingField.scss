@@ -15,7 +15,6 @@
     display: flex;
     width: 258px;
     flex-wrap: wrap;
-    justify-content: space-between;
     background: #d3d3d3;
     padding: 10px 7px 7px 7px;
 
@@ -27,6 +26,7 @@
       box-sizing: border-box;
       justify-content: space-around;
       padding: 3px 0;
+      align-items: center;
     }
 
     main {
@@ -34,15 +34,6 @@
       width: 100%;
       @extend %border;
       border-color: grey white white grey;
-
-      button {
-        @extend %border;
-        border-color: white grey grey white;
-        width: 28px;
-        height: 28px;
-        outline: none;
-      }
     }
-
   }
 }
