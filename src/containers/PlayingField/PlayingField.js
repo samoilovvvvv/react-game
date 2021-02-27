@@ -16,9 +16,13 @@ export default class PlayingField extends Component {
       <div className={'PlayingField'}>
         <div>
           <header>
-            <Scoreboard/>
-            <button>Click me</button>
-            <Scoreboard/>
+            <Scoreboard
+              value={10}
+            />
+            <button>&#128515;</button>
+            <Scoreboard
+              value={0}
+            />
           </header>
           <main>
             <div>
