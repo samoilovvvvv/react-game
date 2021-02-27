@@ -1,0 +1,11 @@
+.Layout {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100vh;
+  background: rgb(0, 78, 152);
+
+  main {
+    flex-grow: 1;
+  }
+}

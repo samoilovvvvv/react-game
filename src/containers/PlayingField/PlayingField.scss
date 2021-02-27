@@ -1,0 +1,53 @@
+%border {
+  border-width: 3px;
+  border-style: solid;
+}
+
+.PlayingField {
+  padding-top: 150px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  > div {
+    @extend %border;
+    border-color: white grey grey white;
+    display: flex;
+    width: 259px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: #d3d3d3;
+    padding: 10px 7px 7px 7px;
+
+    header {
+      @extend %border;
+      border-color: grey white white grey;
+      width: 100%;
+      display: flex;
+      box-sizing: border-box;
+      justify-content: space-around;
+      padding: 3px 0;
+    }
+
+    main {
+      margin-top: 10px;
+      width: 100%;
+      @extend %border;
+      border-color: grey white white grey;
+
+      div {
+        width: 100%;
+        display: flex;
+
+        button {
+          @extend %border;
+          border-color: white grey grey white;
+          width: 28px;
+          height: 28px;
+          outline: none;
+        }
+      }
+    }
+
+  }
+}
