@@ -1,0 +1,16 @@
+.Button {
+  border-width: 3px;
+  border-style: solid;
+  border-color: white grey grey white;
+  width: 47px;
+  height: 47px;
+  outline: none;
+  font-size: 1.7em;
+  padding: 0px;
+
+  p {
+    width: 100%;
+    height: 100%;
+    margin: 1px 1px 0px 0px;
+  }
+}
