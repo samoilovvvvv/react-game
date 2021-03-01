@@ -4,5 +4,13 @@
   border-color: white grey grey white;
   width: 28px;
   height: 28px;
-  outline: none;
+  box-sizing: border-box;
+
+}
+
+.open {
+  border: none;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  background: none;
 }
