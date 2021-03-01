@@ -1,5 +1,6 @@
 import React from 'react'
 import Element from './Element/Element'
+import './Row.scss'
 
 const Row = props => {
   const buttons = []
@@ -9,9 +10,10 @@ const Row = props => {
       <Element
         key={i}
         onClick={props.onClick}
-        x={props.x}
-        y={i + 1}
+        y={props.y}
+        x={i + 1}
         minesCoordinates={props.minesCoordinates}
+        itemState={props.itemState}
       >
       
       </Element>)

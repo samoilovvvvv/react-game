@@ -26,7 +26,7 @@ export default class PlayingField extends Component {
         key={i}
         amount={this.state.field.columns}
         onClick={event => this.clickElementHandler(event)}
-        x={i + 1}
+        y={i + 1}
         minesCoordinates={this.state.field.minesCoordinates}
       />)
     }
@@ -38,8 +38,8 @@ export default class PlayingField extends Component {
     const coordinates = []
   
     for (let i = 0; i < this.state.field.mines; i++) {
-      let x = Math.floor(1 + Math.random() * (this.state.field.rows + 1 - 1))
-      let y = Math.floor(1 + Math.random() * (this.state.field.columns + 1 - 1))
+      let x = Math.floor(1 + Math.random() * (this.state.field.columns + 1 - 1))
+      let y = Math.floor(1 + Math.random() * (this.state.field.rows + 1 - 1))
       
       if (coordinates.length === 0) {
         coordinates.push({x, y})
@@ -48,8 +48,8 @@ export default class PlayingField extends Component {
       
       coordinates.map(element => {
         while (x === element.x && y === element.y) {
-          x = Math.floor(1 + Math.random() * (this.state.field.rows + 1 - 1))
-          y = Math.floor(1 + Math.random() * (this.state.field.columns + 1 - 1))
+          x = Math.floor(1 + Math.random() * (this.state.field.columns + 1 - 1))
+          y = Math.floor(1 + Math.random() * (this.state.field.rows + 1 - 1))
         }
         
         return undefined
