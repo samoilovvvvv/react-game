@@ -10,6 +10,7 @@ export default class PlayingField extends Component {
     
     this.state = {
       field: {
+        itemState: {},
         minesCoordinates: [],
         mines: 10,
         rows: 9,
@@ -28,6 +29,7 @@ export default class PlayingField extends Component {
         onClick={event => this.clickElementHandler(event)}
         y={i + 1}
         minesCoordinates={this.state.field.minesCoordinates}
+        itemState={this.state.field.itemState}
       />)
     }
     
@@ -61,11 +63,105 @@ export default class PlayingField extends Component {
     return coordinates
   }
   
+  openElements(event) {
+    const field = {...this.state.field}
+    const {itemState} = field
+    const keyItem = event.target.dataset.x + event.target.dataset.y
+  
+    itemState[keyItem] = 'open'
+    field['itemState'] = itemState
+  
+    this.setState({
+      field
+    })
+  }
+  
+  gameLogic(event) {
+    const currentX = +event.target.dataset.x
+    const currentY = +event.target.dataset.y
+    const minX = 1
+    const maxX = this.state.field.columns
+    const minY = 1
+    const maxY = this.state.field.rows
+    
+    if ((currentX - 1) >= minX && (currentY - 1) >= minY) {
+      console.log('DIAGONAL VERH LEVO OK')
+      for (let key of this.state.field.minesCoordinates) {
+        if ((currentX - 1) === key.x && (currentY - 1) === key.y) {
+          console.log('BOMBA RYADOM')
+        }
+      }
+    }
+
+    if ((currentY - 1) >= minY) {
+      console.log('VVERH OK')
+      for (let key of this.state.field.minesCoordinates) {
+        if (currentX === key.x && (currentY - 1) === key.y) {
+          console.log('BOMBA RYADOM')
+        }
+      }
+    }
+
+    if ((currentX + 1) <= maxX && (currentY - 1) >= minY) {
+      console.log('DIAGONAL VERH PRAVO OK')
+      for (let key of this.state.field.minesCoordinates) {
+        if ((currentX + 1) === key.x && (currentY - 1) === key.y) {
+          console.log('BOMBA RYADOM')
+        }
+      }
+    }
+
+    if ((currentX + 1) <= maxX) {
+      console.log('PRAVO OK')
+      for (let key of this.state.field.minesCoordinates) {
+        if ((currentX + 1) === key.x && currentY === key.y) {
+          console.log('BOMBA RYADOM')
+        }
+      }
+    }
+  
+    if ((currentX + 1) <= maxX && (currentY + 1) <= maxY) {
+      console.log('DIAGONAL NIZ PRAVO OK')
+      for (let key of this.state.field.minesCoordinates) {
+        if ((currentX + 1) === key.x && (currentY + 1) === key.y) {
+          console.log('BOMBA RYADOM')
+        }
+      }
+    }
+  
+    if ((currentY + 1) <= maxY) {
+      console.log('NIZ OK')
+      for (let key of this.state.field.minesCoordinates) {
+        if (currentX === key.x && (currentY + 1) === key.y) {
+          console.log('BOMBA RYADOM')
+        }
+      }
+    }
+  
+    if ((currentX - 1) >= minX && (currentY + 1) <= maxY) {
+      console.log('DIAGONAL NIZ LEVO OK')
+      for (let key of this.state.field.minesCoordinates) {
+        if ((currentX - 1) === key.x && (currentY + 1) === key.y) {
+          console.log('BOMBA RYADOM')
+        }
+      }
+    }
+  
+    if ((currentX - 1) >= minX) {
+      console.log('LEVO OK')
+      for (let key of this.state.field.minesCoordinates) {
+        if ((currentX - 1) === key.x && currentY === key.y) {
+          console.log('BOMBA RYADOM')
+        }
+      }
+    }
+  }
+  
   componentDidMount() {
     const field = {...this.state.field}
     let minesCoordinates = this.randomCoordinates()
     
-    field["minesCoordinates"] = minesCoordinates
+    field['minesCoordinates'] = minesCoordinates
     
     this.setState({
       field
@@ -73,9 +169,9 @@ export default class PlayingField extends Component {
   }
   
   clickElementHandler(event) {
-    console.log(event.target)
-    console.log(event.target.dataset.x)
-    console.log(event.target.dataset.y)
+    this.openElements(event)
+    this.gameLogic(event)
+    // console.log('X: ' + event.target.dataset.x, 'Y: ' + event.target.dataset.y)
   }
   
   render() {
