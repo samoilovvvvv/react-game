@@ -5,7 +5,16 @@ const Row = props => {
   const buttons = []
   
   for(let i = 0; i < props.amount; i++) {
-    buttons.push(<Element key={i}></Element>)
+    buttons.push(
+      <Element
+        key={i}
+        onClick={props.onClick}
+        x={props.x}
+        y={i + 1}
+        minesCoordinates={props.minesCoordinates}
+      >
+      
+      </Element>)
   }
   
   return (
